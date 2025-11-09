@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Spin V2</title>
+<style>
+body { font-family: Arial; background:#0d47a1; color:white; text-align:center; padding:20px; }
+.button { background:#ff4081; padding:15px 25px; border-radius:8px; color:white; font-size:20px; text-decoration:none; display:inline-block; margin:10px; }
+#wheel { width:300px; height:300px; border-radius:50%; border:8px solid #fff; margin:auto; background:conic-gradient(
+red 0deg 51deg,
+orange 51deg 102deg,
+yellow 102deg 153deg,
+green 153deg 204deg,
+blue 204deg 255deg,
+indigo 255deg 306deg,
+violet 306deg 360deg
+); transition:transform 5s ease-out; }
+.note { background:white; color:black; padding:10px; border-radius:6px; margin-top:20px; }
+</style>
+</head>
+<body>
+
+<h2>Premium Spin Wheel V2</h2>
+
+<a class="button" id="followBtn" href="https://www.instagram.com/c0in.man/" target="_blank">Instagram Follow Kare</a>
+
+<div id="wheel"></div>
+
+<a class="button" id="spinBtn">Spin Kare</a>
+
+<div class="note">
+⚠️ Spin par milne wala reward prapt karne ke liye Instagram par DM kare.
+</div>
+
+<script>
+let followClicked = false;
+document.getElementById("followBtn").onclick = () => followClicked = true;
+
+document.getElementById("spinBtn").onclick = () => {
+    if(!followClicked){
+        alert("Spin karne ke liye pehle Follow karna zaroori hai ❤️");
+        return;
+    }
+    let wheel = document.getElementById("wheel");
+    let rotate = Math.floor(3000 + Math.random()*3000);
+    wheel.style.transform = "rotate(" + rotate + "deg)";
+    setTimeout(()=> alert("🎉 Mubarak ho! Reward jeet gaye! DM me message kare."), 5200);
+};
+</script>
+
+</body>
+</html>
